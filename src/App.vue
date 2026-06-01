@@ -129,7 +129,7 @@ const confetti = computed(() =>
 
     <!-- Центральная большая фотография -->
     <div v-if="favorite" class="favorite-block">
-      <p class="favorite-lead">а самое главное — ты…</p>
+      <p class="favorite-lead">Такая разная, но главное…</p>
       <figure
         class="favorite-card"
         :class="{ revealed: favoriteRevealed }"
@@ -170,6 +170,9 @@ const confetti = computed(() =>
 .hero-kicker {
   font-size: 1.2rem;
   letter-spacing: 0.3em;
+  /* letter-spacing добавляет интервал и после последней буквы, из-за чего
+     центрированный текст уезжает влево — компенсируем отступом слева */
+  padding-left: 0.3em;
   text-transform: uppercase;
   color: #c9722b;
   margin-bottom: 1.2rem;
