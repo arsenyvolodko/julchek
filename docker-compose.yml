@@ -1,0 +1,10 @@
+services:
+  julchek:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: julchek:latest
+    container_name: julchek
+    restart: unless-stopped
+    ports:
+      - "4400:80"
