@@ -117,7 +117,7 @@ const confetti = computed(() =>
 
   <!-- ЭКРАН 2: Какая ты -->
   <section id="about" class="about">
-    <h2 class="about-title">Какая ты</h2>
+    <h2 class="about-title">Ты самая..</h2>
     <p class="about-hint">нажми на каждое окошко 💛</p>
 
     <div class="grid">
