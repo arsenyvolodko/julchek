@@ -97,13 +97,21 @@ const confetti = computed(() =>
     </div>
 
     <div class="hero-content">
-      <p class="hero-kicker">✨ Сегодня твой день ✨</p>
+      <div class="hero-kicker">
+        <span class="kicker-star">✨</span>
+        <span class="kicker-text">Сегодня<br />твой день</span>
+        <span class="kicker-star">✨</span>
+      </div>
       <h1 class="hero-title">
         <span class="line">Юлечка,</span>
         <span class="line big">с Днём Рождения!</span>
       </h1>
       <p class="hero-sub">🎂 🎈 🎁 🌷</p>
-      <a class="scroll-btn" href="#about">какая ты (или какой я тебя вижу) ↓</a>
+      <a class="scroll-btn" href="#about">
+        какая ты<br />
+        <span class="scroll-btn-sub">(или какой я тебя вижу)</span>
+        ↓
+      </a>
     </div>
   </section>
 
@@ -168,15 +176,30 @@ const confetti = computed(() =>
 }
 
 .hero-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  margin-bottom: 1.2rem;
+  color: #c9722b;
+  animation: fade-in 1.2s ease both;
+}
+
+.kicker-text {
   font-size: 1.2rem;
+  line-height: 1.35;
   letter-spacing: 0.3em;
   /* letter-spacing добавляет интервал и после последней буквы, из-за чего
      центрированный текст уезжает влево — компенсируем отступом слева */
   padding-left: 0.3em;
   text-transform: uppercase;
-  color: #c9722b;
-  margin-bottom: 1.2rem;
-  animation: fade-in 1.2s ease both;
+  text-align: center;
+}
+
+.kicker-star {
+  /* крупные звёзды во всю высоту двух строк текста */
+  font-size: 2.6rem;
+  line-height: 1;
 }
 
 .hero-title {
@@ -219,6 +242,13 @@ const confetti = computed(() =>
   box-shadow: 0 10px 24px rgba(233, 130, 47, 0.4);
   transition: transform 0.25s, box-shadow 0.25s;
   animation: fade-in 1.6s ease 0.9s both, bob 2.4s ease-in-out 1.6s infinite;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.scroll-btn-sub {
+  font-size: 0.85rem;
+  opacity: 0.9;
 }
 
 .scroll-btn:hover {
